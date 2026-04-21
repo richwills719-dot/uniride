@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0F1F3D;
+  --navy-light: #1A2F57;
+  --gold: #E8A020;
+  --gold-light: #F5C05A;
+  --cream: #FAF7F2;
+  --cream-dark: #F0EBE0;
+  --surface: #FFFFFF;
+  --text-primary: #0F1F3D;
+  --text-secondary: #4A5568;
+  --text-muted: #8A95A3;
+  --green: #0F6E56;
+  --green-bg: #E1F5EE;
+  --border: rgba(15, 31, 61, 0.1);
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+.font-display { font-family: 'DM Serif Display', serif; }
+.card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); }
+.card-hover { transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s; }
+.card-hover:hover { border-color: rgba(15,31,61,0.25); box-shadow: 0 4px 20px rgba(15,31,61,0.08); transform: translateY(-1px); }
+.card-selected { border: 2px solid var(--navy) !important; box-shadow: 0 0 0 4px rgba(15,31,61,0.06); }
+.badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.03em; }
+.badge-express { background: #E1F5EE; color: #0F6E56; }
+.badge-regular { background: #E6F1FB; color: #185FA5; }
+.badge-evening { background: #FAEEDA; color: #854F0B; }
+.badge-available { background: #E1F5EE; color: #0F6E56; }
+.badge-busy { background: #FAEEDA; color: #854F0B; }
+.badge-offline { background: #F1EFE8; color: #5F5E5A; }
+.badge-confirmed { background: #E1F5EE; color: #0F6E56; }
+.badge-pending { background: #E6F1FB; color: #185FA5; }
+.badge-cancelled { background: #FCEBEB; color: #A32D2D; }
+.badge-completed { background: #F1EFE8; color: #444441; }
+.btn-primary { background: var(--navy); color: white; border: none; border-radius: var(--radius-sm); padding: 13px 24px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; width: 100%; transition: background 0.15s, transform 0.1s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-primary:hover:not(:disabled) { background: var(--navy-light); transform: translateY(-1px); }
+.btn-primary:disabled { opacity: 0.35; cursor: not-allowed; }
+.btn-gold { background: var(--gold); color: var(--navy); font-weight: 600; }
+.btn-gold:hover:not(:disabled) { background: var(--gold-light); }
+.btn-outline { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 11px 24px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: border-color 0.15s, background 0.15s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-outline:hover { border-color: var(--navy); background: var(--cream); }
+.input-field { width: 100%; background: var(--cream); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 11px 14px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text-primary); outline: none; transition: border-color 0.15s; }
+.input-field:focus { border-color: var(--navy); background: white; }
+.input-field::placeholder { color: var(--text-muted); }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.dot-green { background: #1D9E75; }
+.dot-amber { background: #EF9F27; }
+.dot-gray { background: #888780; }
+.nav-tab { padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--text-secondary); cursor: pointer; transition: all 0.15s; text-decoration: none; display: inline-block; }
+.nav-tab:hover { background: var(--cream-dark); color: var(--text-primary); }
+.nav-tab.active { background: var(--navy); color: white; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fadeUp { animation: fadeUp 0.3s ease forwards; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
